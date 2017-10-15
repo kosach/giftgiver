@@ -10,14 +10,13 @@ class App extends Component {
       gifts: [],
     };
   }
-
-  addGift = () => {
+  
+  addGift = (t) => {
     const { gifts } = this.state;
     const ids = gifts.map(gift => gift.id);
     gifts.push({id: max_number(ids) + 1});
     this.setState({ gifts })
   }
-
   removeGift = (id) =>{
     const gifts = this.state.gifts.filter( gift => gift.id !== id);
     this.setState({ gifts });
